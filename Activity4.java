@@ -2,7 +2,7 @@ package week3.DataStructures;
 
 import java.util.Scanner;
 
-public class Activity3 {
+public class Activity4 {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
     int iProdID;
