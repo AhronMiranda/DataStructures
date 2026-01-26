@@ -61,14 +61,7 @@ public class Activity3 {
     }
 
     public static void displayDetails(int ProdID, String ProdName, double price, double quantity, double discount, double subtotal, String description) {
-        System.out.printf("""
-                %d %s 
-                Priced at %.0d for %.0d pieces
-                Discounted at %.0d
-                Subtotal: %.0d
-
-                For: %s
-                """, ProdID, ProdName, price, quantity, discount, subtotal, description);
+        System.out.println(ProdID + ProdName + "\nPriced at "  + price + " for " + quantity + " pieces\nDiscounted at " + discount + "\nSubtotal:" + subtotal + "\n\nFor:" + description);
         
     }
 }
