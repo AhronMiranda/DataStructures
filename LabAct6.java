@@ -1,8 +1,9 @@
 
 
+import java.io.FileWriter;
 import java.util.Scanner;
 
-public class LabAct5 {
+public class LabAct6 {
 
         //SCANNER
         public static Scanner sc = new Scanner(System.in);
@@ -15,7 +16,10 @@ public class LabAct5 {
         public static final String ITALIC = "\u001B[3m";
         public static final String RESET = "\033[0m";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+
+    FileWriter fw = new FileWriter("txt.txt"); 
+
     int iPerfID, iViewers;
     int count = 0;
     String strName, strGenre;
@@ -25,31 +29,37 @@ public class LabAct5 {
     System.out.println(RED + BOLD + "Register your Band or Favorite Artist" + RESET);
 
     System.out.println(GREEN + "=-=-=-=" + RESET + "\n");
+
+    fw.write("Register your Band or Favorite Artist" + " \n");
     
     
     do {
     System.out.println(ITALIC + BLUE + "[Please Input the Following]" + RESET);
+
+    fw.write("[Please Input the Following]" + "\n");
     
     while (true) {
         try {
     //STRINGS Name and Genre
     System.out.print("Artist Name: ");
-    strName = inputString();
+    strName = inputString(); fw.write("Artist Name: " + strName + "\n");
     System.out.print("Genre: ");
-    strGenre = inputString();
+    strGenre = inputString(); fw.write("Genre: " + strGenre + "\n");
     
     // INT Performance ID
     System.out.print("PerformanceID: ");
-    iPerfID = inputInt();
+    iPerfID = inputInt(); fw.write("Performance ID: " + iPerfID + "\n");
     
     //DOUBLES Price of reserving the performer
     System.out.print("Stage Price: ");
-    dStagePrice = inputDouble();
+    dStagePrice = inputDouble(); fw.write("Stage Price: " + dStagePrice + "\n");
 
 
     //INT Average viewers
     System.out.print("Average Viewers: ");
-    iViewers = inputInt();
+    iViewers = inputInt(); fw.write("Average Viewers: " + iViewers + "\n");
+
+    fw.close();
     
     print(strName, strGenre, iPerfID, dStagePrice, iViewers);
     break;

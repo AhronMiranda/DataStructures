@@ -1,4 +1,3 @@
-package week3.DataStructures;
 
 import java.util.Scanner;
 
