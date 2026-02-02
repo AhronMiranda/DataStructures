@@ -30,7 +30,7 @@ public class LabAct6 {
 
     System.out.println(GREEN + "=-=-=-=" + RESET + "\n");
 
-    fw.write("Register your Band or Favorite Artist" + " \n");
+    fw.write("Registered Bands & Music Artists" + " \n");
     
     
     do {
@@ -84,6 +84,7 @@ public class LabAct6 {
 
     
     System.out.println(GREEN + count + " Music Artists registered today." + RESET);
+    fw.write("[-=-=-=-=-=-=-]" + "\n");
     fw.write(count + " Music Artists registered today.");
     fw.flush();
     }
