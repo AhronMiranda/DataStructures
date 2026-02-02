@@ -18,7 +18,7 @@ public class LabAct6 {
 
     public static void main(String[] args) throws Exception {
 
-    FileWriter fw = new FileWriter("txt.txt"); 
+    FileWriter fw = new FileWriter("LabAct6_Output.txt"); 
 
     int iPerfID, iViewers;
     int count = 0;
@@ -36,7 +36,7 @@ public class LabAct6 {
     do {
     System.out.println(ITALIC + BLUE + "[Please Input the Following]" + RESET);
 
-    fw.write("[Please Input the Following]" + "\n");
+    fw.write("[-=-=-=-=-=-=-]" + "\n");
     
     while (true) {
         try {
@@ -59,7 +59,7 @@ public class LabAct6 {
     System.out.print("Average Viewers: ");
     iViewers = inputInt(); fw.write("Average Viewers: " + iViewers + "\n");
 
-    fw.close();
+    fw.flush();
     
     print(strName, strGenre, iPerfID, dStagePrice, iViewers);
     break;
@@ -84,8 +84,10 @@ public class LabAct6 {
 
     
     System.out.println(GREEN + count + " Music Artists registered today." + RESET);
-
+    fw.write(count + " Music Artists registered today.");
+    fw.flush();
     }
+    
 
     public static String inputString() {
     String tempString = sc.nextLine();

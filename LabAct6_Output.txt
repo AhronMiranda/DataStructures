@@ -1,0 +1,20 @@
+Register your Band or Favorite Artist 
+[-=-=-=-=-=-=-]
+Artist Name: Janiyah Tan
+Genre: Disney
+Performance ID: 1
+Stage Price: 10.0
+Average Viewers: 5
+[-=-=-=-=-=-=-]
+Artist Name: Sundowner
+Genre: Rock
+Performance ID: 2
+Stage Price: 1000.0
+Average Viewers: 56
+[-=-=-=-=-=-=-]
+Artist Name: Kaizer David
+Genre: Rock
+Performance ID: 3
+Stage Price: 99999.0
+Average Viewers: 900000
+3 Music Artists registered today.
