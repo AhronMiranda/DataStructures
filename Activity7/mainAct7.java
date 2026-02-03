@@ -37,18 +37,22 @@ public class mainAct7 {
         switch (answer) {
 
         case 1 :
+                System.out.println("You have chosen EFM Grocery");
                 GroceryEFM grocery = new GroceryEFM();
                 grocery.runGroceryEFM();
                 break;
         case 2 :
+                System.out.println("You have chosen Movie Registration");
                 MovieRegistration movie = new MovieRegistration();
                 movie.runMovieRegistration();
                 break;
         case 3 :
+                System.out.println("You have chosen Movie Rental");
                 MovieRental movieRent = new MovieRental();
                 movieRent.runMovieRental();
                 break;
         case 4 :
+                System.out.println("You have chosen Band Registration");
                 BandRegistration band = new BandRegistration();
                 band.runBandRegistration();
                 break;
