@@ -56,7 +56,7 @@ public class GroceryEFM {
             }
             } while ((cCustomer == 'Y') || (cCustomer == 'y'));
             System.out.println("Grocery program terminating...");
-            System.exit(0);
+          
 
 
 

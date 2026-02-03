@@ -9,7 +9,9 @@ public class mainAct7 {
         boolean run = true;
 
         Scanner sc = new Scanner(System.in);
+        while (run) {
         System.out.println("""
+            
                 Welcome to EFM Enterprise Systems
                 We've got it all for you!
 
@@ -22,7 +24,7 @@ public class mainAct7 {
 
                 """);
             
-            while (run) {
+            
                 System.out.print("User>> ");
             
             try {
