@@ -58,5 +58,8 @@ public class mainAct7 {
                 break;
         }
     }
+
+    System.out.println("Thank you for availing our services!!!");
+    System.out.println("GOODBYE!!!");
     }
 }
