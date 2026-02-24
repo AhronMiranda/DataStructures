@@ -1,0 +1,38 @@
+
+
+import java.util.*;
+import java.io.*;
+
+public class BandDataExtractionAndDisplay {
+    
+    
+        public static void main(String[] args) throws Exception {
+            
+	    File file=new File("musicalArtists.txt");
+	    Scanner FR=new Scanner(file);
+	    String aArtistNames[]=new String[50];
+	    String aGenre[]=new String[50];
+	    int aID[]=new int[50];
+	    int aViewers[]=new int[50];
+	    double aStagePrice[]=new double[50];
+	    int ctr=0;
+	    char cAgain;
+	    String sAgain;
+	    Scanner scan=new Scanner(System.in);
+	    
+	    while(FR.hasNextLine()) {
+	        //extract
+		    aArtistNames[ctr] =FR.nextLine();
+		    aGenre[ctr] =FR.nextLine();
+		    aID[ctr]=FR.nextInt(); FR.nextLine();
+		    aStagePrice[ctr]=FR.nextDouble(); FR.nextLine();
+		    aViewers[ctr]=FR.nextInt(); FR.nextLine();
+		    ctr++;
+	    }
+	    
+	    for(int a=0; a<ctr; a++){ //print the array
+	        System.out.println(a + " " + aArtistNames[a] + " " + aGenre[a] + " " + aID[a] + " " + aStagePrice[a] + " " + aViewers[a]);
+	        
+	    }
+    }
+}
