@@ -20,8 +20,8 @@ public class MainTerminal {
                 2. Movie Registration
                 3. Movie Rental
                 4. Band Registration
-                6. Display and Extract Bands Registered
-                5. Exit
+                5. Display and Extract Bands Registered
+                0. Exit
 
                 """);
             
@@ -59,7 +59,7 @@ public class MainTerminal {
                 BandRegistration band = new BandRegistration();
                 band.runBandRegistration();
                 break;
-        case 5 :
+        case 0 :
                 System.out.println("Exiting...");
                 run = false;
                 break;
