@@ -1,12 +1,29 @@
 package MIDTERMS.Activity2;
 
+import java.util.*;
+import java.io.*;
 
 public class BandDataExtractionAndDisplay {
     
-    
-    try (BufferedReader BR = new BufferedReader(FileReader("musicalArtists.txt"))) {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("musicalArtists.txt"))) {
+            //FOR READING EXISTING DATA
+        String line;
+        br.readLine(); // skip header
+
+        boolean hasData = false;
+        System.out.println("THE ARTISTS REGISTERED ARE:");
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+            hasData = true;
+        }
+
+        if (!hasData) {
+            System.out.println("[No grades found]");
+        }
 
     } catch (IOException e) {
-        syso
+        System.out.println("[ERROR] CSV file not found");
+    }
     }
 }
