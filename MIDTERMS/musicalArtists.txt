@@ -1,0 +1,50 @@
+Umi Nari
+Indie and Pop
+01
+200
+300
+Sundowner
+Indie Rock
+02
+300
+200
+Bruno Mars
+R&B, Reggae
+03
+999,999
+2,567,987
+Taylor Swift
+Several Genres
+04
+999,999
+1,567,987
+Laufey
+Yearn
+05
+899,999
+2,000,000
+Twenty One Pilots
+Multiple Genres
+06
+799,999,999
+3,000,000
+Wonder Bag
+R&B, hip hop
+07
+500,000
+1,000,000
+Chris Brown
+R&B
+08
+800,000
+1,900,000
+Sabrina Carpenter
+pop
+09
+900,999
+2,000
+Sunny Stories
+Opm
+10
+300
+5,000

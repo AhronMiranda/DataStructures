@@ -1,4 +1,4 @@
-package Activity7;
+package PRELIMS.Activity7;
 
 import java.util.Scanner;
 

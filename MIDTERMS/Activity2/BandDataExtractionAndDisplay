@@ -1,0 +1,12 @@
+package MIDTERMS.Activity2;
+
+
+public class BandDataExtractionAndDisplay {
+    
+    
+    try (BufferedReader BR = new BufferedReader(FileReader("musicalArtists.txt"))) {
+
+    } catch (IOException e) {
+        syso
+    }
+}
