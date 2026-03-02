@@ -1,4 +1,4 @@
-Umi Nari
+UmiNari
 Indie and Pop
 01
 200
@@ -48,3 +48,4 @@ Opm
 10
 300
 5,000
+
