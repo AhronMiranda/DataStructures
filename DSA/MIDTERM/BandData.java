@@ -28,7 +28,7 @@ public class BandData {
     try {
         File file = new File("musicalArtists.txt");
         Scanner FR = new Scanner(file);
-        FileWriter terminal = new FileWriter("RunProgram.txt");
+        FileWriter terminal = new FileWriter("RunProgram.txt", true);
 
         String[] aNames = new String[50];
         String[] aGenre = new String[50];
@@ -38,7 +38,6 @@ public class BandData {
         int ctr = 0;
 
         while (FR.hasNextLine()) {
-            terminal.write("Program Displayed the List\n");
             aNames[ctr] = FR.nextLine();     
             if (!FR.hasNextLine()) break;
             aGenre[ctr] = FR.nextLine();       
@@ -54,7 +53,11 @@ public class BandData {
         for (int a = 0; a < ctr; a++) {
             System.out.printf("%-2d | Stage Name: %-20s | Genres: %-20s | PERFORMANCE ID: %3d | Average Price: $ %-15.2f | Average Viewers: %-10d\n",
                 a + 1, aNames[a], aGenre[a], aPerfID[a], aStagePrice[a], aViewers[a]);
+
+            terminal.write(String.format("%-2d | Stage Name: %-20s | Genres: %-20s | PERFORMANCE ID: %3d | Average Price: $ %-15.2f | Average Viewers: %-10d\n",
+                a + 1, aNames[a], aGenre[a], aPerfID[a], aStagePrice[a], aViewers[a]));
         }
+        terminal.write("Program Displayed the Updated List this Run\n");
         terminal.close();
         FR.close();
     } catch (IOException e) {
@@ -66,7 +69,7 @@ public class BandData {
     public void runAddBandData(){
         
          try {
-        FileWriter terminal = new FileWriter("RunProgram.txt");
+        FileWriter terminal = new FileWriter("RunProgram.txt", true);
         FileWriter FW = new FileWriter("musicalArtists.txt", true);
         char cAgain;
 	    String sAgain;
@@ -118,7 +121,7 @@ public class BandData {
 
     public void runSearchBandData(){
        try {
-        FileWriter terminal = new FileWriter("RunProgram.txt");
+        FileWriter terminal = new FileWriter("RunProgram.txt", true);
 
         File file = new File("musicalArtists.txt");
         Scanner FR = new Scanner(file);
@@ -151,7 +154,9 @@ public class BandData {
         int a = inputInt() - 1;
             System.out.printf("%-2d | Stage Name: %-20s | Genres: %-20s | PERFORMANCE ID: %2d | Average Price: $ %-15.2f | Average Viewers: %-10d\n",
                 a + 1, aNames[a], aGenre[a], aPerfID[a], aStagePrice[a], aViewers[a]);
-            System.err.printf(BLUE + "[DISPLAYED BAND NO %d]" + RESET, a + 1);
+            System.out.printf(BLUE + "[DISPLAYED BAND NO %d]\n" + RESET, a + 1);
+            System.out.println();
+
 
         terminal.write("Program Searched the List\n");
         terminal.close();
@@ -165,7 +170,7 @@ public class BandData {
 
     public void runEditBandData(){
        try {
-        FileWriter terminal = new FileWriter("RunProgram.txt");
+        FileWriter terminal = new FileWriter("RunProgram.txt", true);
 
         File file = new File("musicalArtists.txt");
         Scanner FR = new Scanner(file);
@@ -202,7 +207,8 @@ public class BandData {
         if (aNames[a] != null) {
             System.out.printf("%-2d | Stage Name: %-20s | Genres: %-20s | PERFORMANCE ID: %2d | Average Price: $ %-15.2f | Average Viewers: %-10d\n",
                 a + 1, aNames[a], aGenre[a], aPerfID[a], aStagePrice[a], aViewers[a]);
-            System.err.printf(BLUE + "[DISPLAYED BAND NO %d]" + RESET, a + 1);
+            System.out.printf(BLUE + "[DISPLAYED BAND NO %d]\n" + RESET, a + 1);
+            System.out.println();
         } else {
             System.out.println(RED + "[ERROR] Data Location is out of bounds" + RESET);
             System.out.println(RED + "THESE ARE THE ONLY BANDS REGISTERED" + RESET);
@@ -250,7 +256,7 @@ public class BandData {
 
     public void runDeleteBandData(){
        try {
-        FileWriter terminal = new FileWriter("RunProgram.txt");
+        FileWriter terminal = new FileWriter("RunProgram.txt", true);
 
         File file = new File("musicalArtists.txt");
         Scanner FR = new Scanner(file);
@@ -287,7 +293,8 @@ public class BandData {
         if (aNames[a] != null) {
             System.out.printf("%-2d | Stage Name: %-20s | Genres: %-20s | PERFORMANCE ID: %2d | Average Price: $ %-15.2f | Average Viewers: %-10d\n",
                 a + 1, aNames[a], aGenre[a], aPerfID[a], aStagePrice[a], aViewers[a]);
-            System.err.printf(BLUE + "[DISPLAYED BAND NO %d]" + RESET, a + 1);
+            System.out.printf(BLUE + "[DISPLAYED BAND NO %d]\n" + RESET, a + 1);
+            System.out.println();
         } else {
             System.out.println(RED + "[ERROR] Data Location is out of bounds" + RESET);
             runBandDataExtractionAndDisplay();
@@ -336,7 +343,7 @@ public class BandData {
     int answer = sortMenu();
 
     try {
-        FileWriter terminal = new FileWriter("RunProgram.txt");
+        FileWriter terminal = new FileWriter("RunProgram.txt", true);
 
         File file = new File("musicalArtists.txt");
         Scanner FR = new Scanner(file);
@@ -552,6 +559,10 @@ public class BandData {
         for (int a = 0; a < ctr; a++) {
             System.out.printf("%-2d | Stage Name: %-20s | Genres: %-20s | PERFORMANCE ID: %2d | Average Price: $ %-15.2f | Average Viewers: %-10d\n",
                 a + 1, aNames[a], aGenre[a], aPerfID[a], aStagePrice[a], aViewers[a]);
+
+            terminal.write(String.format("%-2d | Stage Name: %-20s | Genres: %-20s | PERFORMANCE ID: %3d | Average Price: $ %-15.2f | Average Viewers: %-10d\n",
+                a + 1, aNames[a], aGenre[a], aPerfID[a], aStagePrice[a], aViewers[a]));
+            terminal.write("\n[THIS IS THE SORTED LIST WHICH WAS DISPLAYED]");
         }
         terminal.write("Program Sorted a Displayed version of the List\n");
         terminal.close();
@@ -606,8 +617,9 @@ public class BandData {
     }
 
     public int sortMenu() {
+        int answer = 0;
         try {
-        FileWriter terminal = new FileWriter("RunProgram.txt");
+        FileWriter terminal = new FileWriter("RunProgram.txt", true);
         System.out.println("""
                 +----------------------------------------+
                 |             Sort the bands             |
@@ -624,7 +636,7 @@ public class BandData {
                 """);
 
                 System.out.print("User>>");
-                int answer = inputInt();
+                answer = inputInt();
 
                 terminal.write("Program Opened the Band Menu\n");
                 terminal.close();
@@ -632,6 +644,7 @@ public class BandData {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            return answer;
             
     }
 }
