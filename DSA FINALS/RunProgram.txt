@@ -33,3 +33,58 @@ Program Searched the List
 10 | Stage Name: Prian's Band         | Genres: pop                  | PERFORMANCE ID:  18 | Average Price: $ 9000.00         | Average Viewers: 90        
 Program Displayed the Updated List this Run
 Program Searched the List
+
++---------------------------------------+
+|   Welcome to Ahron's Code Systems     |
+| ======================================|
+|                                       |
+| Please choose one of the following:   |
+| 1. EFM Grocery                        |    (1. PRELIMS)
+| 2. Movie Registration                 |    (2. PRELIMS)
+| 3. Movie Rental                       |    (3. PRELIMS)
+| 4. Band Registration                  |    (4. PRELIMS NO FILE SAVING)
+| 5. Extract Saved Bands                |    (5. MIDTERMS)
+| 6. Musical Artists Menu               |    (6. MIDTERMS)
+| 7. Quiz App                           |    (7. FINALS)
+| 0. Exit                               |
++---------------------------------------+
+
+User>> 7
+Quiz App Chosen
+Guest Game Initialized
+--- I. MULTIPLE CHOICE (A/B/C, NEXT, BACK)
++------------------------------------------------------------------------+
+MULTIPLE CHOICE SCORE: 10
+--- II. IDENTIFICATION (Answer / NEXT / BACK)
++------------------------------------------------------------------------+
+IDENTIFICATION SCORE: 9
+GUEST | TOTAL SCORE: 19
++---------------------------------------+
+|   Welcome to Ahron's Code Systems     |
+| ======================================|
+|                                       |
+| Please choose one of the following:   |
+| 1. EFM Grocery                        |    (1. PRELIMS)
+| 2. Movie Registration                 |    (2. PRELIMS)
+| 3. Movie Rental                       |    (3. PRELIMS)
+| 4. Band Registration                  |    (4. PRELIMS NO FILE SAVING)
+| 5. Extract Saved Bands                |    (5. MIDTERMS)
+| 6. Musical Artists Menu               |    (6. MIDTERMS)
+| 7. Quiz App                           |    (7. FINALS)
+| 0. Exit                               |
++---------------------------------------+
+
+User>> 1
+EFM Grocery Chosen
+
+Welcome to EFM Grocery
+Input product name: Chippy
+Price: 5.00
+Quantity: 2.00
+Total: 10.00
+---Receipt
+Bill : 10.00
+Payment: 20.00
+ Change: 10.00
+Thank you for shopping!
+Grocery program terminating...

@@ -1,69 +1,78 @@
-
-
-
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
-
 public class GroceryEFM {
-    
-        public static Scanner input = new Scanner(System.in);
 
+    public static Scanner input = new Scanner(System.in);
 
-        String  strProdName, strCustomer;
-        String  strAnotherP;
-        char cCustomer = ' ' ;
-        char cAnotherP ;
-        double dQty, dBill, dPrice;
-        double dTotal, dPay, dChange=0;
+    String strProdName, strCustomer;
+    String strAnotherP;
+    char cCustomer = ' ';
+    char cAnotherP;
+    double dQty, dBill, dPrice;
+    double dTotal, dPay, dChange = 0;
 
-        public GroceryEFM() {}
+    public GroceryEFM() {
+    }
 
-        public void runGroceryEFM() {
-        do {
-        dBill=0;
-        do {
+    public void runGroceryEFM() {
+        try {
+            FileWriter terminal = new FileWriter("RunProgram.txt", true);
+            terminal.write("EFM Grocery Chosen\n");
+            do {
+                dBill = 0;
+                do {
 
+                    System.out.println("\nWelcome to EFM Grocery");
+                    System.out.print("Input product name: ");
+                    strProdName = input.nextLine();
+                    System.out.print("Price: ");
+                    dPrice = input.nextDouble();
+                    System.out.println();
+                    System.out.print("Quantity: ");
+                    dQty = input.nextDouble();
+                    input.nextLine();
+                    dTotal = dQty * dPrice;
+                    System.out.println("Total: " + dTotal);
+                    dBill = dBill + dTotal;
+                    System.out.print("Another product Y/N?");
+                    strAnotherP = input.nextLine();
+                    cAnotherP = strAnotherP.charAt(0);
 
-        System.out.println("\nWelcome to EFM Grocery");
-        System.out.print("Input product name: ");
-        strProdName = input.nextLine();
-        System.out.print("Price: ");
-        dPrice = input.nextDouble(); System.out.println();
-        System.out.print("Quantity: ");
-        dQty = input.nextDouble();
-        input.nextLine();
-        dTotal = dQty * dPrice;
-        System.out.println("Total:" + dTotal);
-        dBill = dBill + dTotal;
-        System.out.print("Another product Y/N?");
-        strAnotherP = input.nextLine();
-        cAnotherP = strAnotherP.charAt(0);
-        } while ((cAnotherP == 'Y') || (cAnotherP == 'y'));
-            System.out.println("Bill :" + dBill);
-            System.out.print("Payment:");
-            dPay = input.nextDouble();
-            input.nextLine();
+                    terminal.write(String.format(
+                            "\nWelcome to EFM Grocery\nInput product name: %s\nPrice: %.2f\nQuantity: %.2f\nTotal: %.2f\n",
+                            strProdName, dPrice, dQty, dTotal));
 
+                } while ((cAnotherP == 'Y') || (cAnotherP == 'y'));
+                System.out.println("Bill : " + dBill);
+                System.out.print("Payment: ");
+                dPay = input.nextDouble();
+                input.nextLine();
 
-            if(dPay >= dBill) {
-                dChange = dPay - dBill;
-                System.out.println("Change: " + dChange);
-                System.out.println("Thank you for shopping!");
-            } else {
-                System.out.println("Money aint enough");
-                System.out.print("Another customer Y/N?");
-                strCustomer = input.nextLine();
-                cCustomer = strCustomer.charAt(0);
-            }
+                if (dPay >= dBill) {
+                    dChange = dPay - dBill;
+                    System.out.println("Change: " + dChange);
+                    System.out.println("Thank you for shopping!");
+                    terminal.write(String.format(
+                            "---Receipt\nBill : %.2f\nPayment: %.2f\n Change: %.2f\nThank you for shopping!\n", dBill,
+                            dPay, dChange));
+                } else {
+                    System.out.println("Money aint enough");
+                    System.out.print("Another customer Y/N?");
+                    strCustomer = input.nextLine();
+                    cCustomer = strCustomer.charAt(0);
+                }
+
             } while ((cCustomer == 'Y') || (cCustomer == 'y'));
             System.out.println("Grocery program terminating...");
-          
+            terminal.write("Grocery program terminating...");
 
+            terminal.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-
-       
-}
-
+    }
 
 }

@@ -1,5 +1,5 @@
-
-
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -87,6 +87,9 @@ public class MIDTERMS {
 
 
     public int menu() {
+        int answer = 0;
+
+        try (FileWriter terminal = new FileWriter("RunProgram.txt", true)) {
         System.out.println("""
                 +----------------------------------------+
                 |   LIST OF MUSICAL ARTISTS AND BANDS    |
@@ -102,10 +105,31 @@ public class MIDTERMS {
 
                 """);
 
-                System.out.print("User>>");
-                int answer = inputInt();
+        terminal.write("""
+                +----------------------------------------+
+                |   LIST OF MUSICAL ARTISTS AND BANDS    |
+                +----------------------------------------+
+
+                [1] ADD
+                [2] SEARCH
+                [3] EDIT
+                [4] DELETE
+                [5] SORT LIST
+                [6] DISPLAY LIST
+                [0] BACK
+
+                """);
+
+                System.out.print("User>> ");
+                answer = inputInt();
+
+                terminal.write("User>> " + answer + "\n");
+
 
                 return answer;
+            } catch (IOException e) {
+                System.out.println("[ERROR SAVE FILE NOT FOUND]");
+            }
+        return answer;
     }
 }
-

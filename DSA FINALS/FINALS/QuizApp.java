@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IO;
 import java.io.IOException;
 
 import java.util.ArrayList;
@@ -33,77 +34,92 @@ public class QuizApp {
         load();
 
         while (true) {
+            try {
+                FileWriter terminal = new FileWriter("RunProgram.txt", true);
+                terminal.write("Quiz App Chosen\n");
 
-            correctAnswer = 0;
-            currentUser = null;
+                correctAnswer = 0;
+                currentUser = null;
 
-            switch (menu()) {
-                case 1:
+                switch (menu()) {
+                    case 1:
+                        terminal.write("Initializing Player...\n");
 
-                    switch (menuRegister()) {
-                        case 1:
-                            System.out.println("""
-                                    +-----------------------------+
-                                    |            LOGIN            |
-                                    +-----------------------------+
+                        switch (menuRegister()) {
+                            case 1:
+                                System.out.println("""
+                                        +-----------------------------+
+                                        |            LOGIN            |
+                                        +-----------------------------+
 
-                                    """);
-                            login();
-                            break;
+                                        """);
+                                login(terminal);
+                                break;
 
-                        case 2:
-                            System.out.println("""
-                                    +-----------------------------+
-                                    |        REGISTER USER        |
-                                    +-----------------------------+
+                            case 2:
+                                System.out.println("""
+                                        +-----------------------------+
+                                        |        REGISTER USER        |
+                                        +-----------------------------+
 
-                                    """);
-                            register();
-                            break;
+                                        """);
+                                register(terminal);
+                                break;
 
-                        default:
-                            System.out.println("Back");
-                            continue;
-                    }
-                    break;
+                            default:
+                                System.out.println("Back");
+                                continue;
+                        }
+                        break;
 
-                case 2:
-                    System.out.println("Playing");
-                    break;
+                    case 2:
+                        terminal.write("Guest Game Initialized\n");
+                        System.out.println("Playing");
+                        break;
 
-                case 3:
-                    editMultipleChoice();
-                    continue;
+                    case 3:
+                        terminal.write("Multiple Choice Edited\n");
+                        editMultipleChoice();
+                        continue;
 
-                case 4:
-                    editIdentification();
-                    continue;
+                    case 4:
+                        terminal.write("Identification Edited\n");
+                        editIdentification();
+                        continue;
 
-                case 5:
-                    displayLeaderboard();
-                    continue;
+                    case 5:
+                        terminal.write("Leaderboard Displayed\n");
+                        displayLeaderboard();
+                        continue;
 
-                case 0:
-                    System.exit(0);
-                    break;
+                    case 0:
+                        System.exit(0);
+                        break;
 
-                default:
-                    System.out.println("Invalid option.");
-                    continue;
-            }
+                    default:
+                        System.out.println("Invalid option.");
+                        continue;
+                }
 
-            initializeMultipleChoice();
-            initializeIdentification();
+                initializeMultipleChoice(terminal);
+                initializeIdentification(terminal);
 
-            if (currentUser != null) {
-                System.out.println(currentUser.getUsername() + " | TOTAL SCORE: " + correctAnswer);
-                currentUser.setScore(correctAnswer);
+                if (currentUser != null) {
+                    System.out.println(currentUser.getUsername() + " | TOTAL SCORE: " + correctAnswer);
+                    terminal.write(currentUser.getUsername() + " | TOTAL SCORE: " + correctAnswer);
+                    currentUser.setScore(correctAnswer);
+                    save();
+                } else {
+                    System.out.println("GUEST | TOTAL SCORE: " + correctAnswer);
+                    terminal.write("GUEST | TOTAL SCORE: " + correctAnswer);
+
+                }
+
                 save();
-            } else {
-                System.out.println("GUEST | TOTAL SCORE: " + correctAnswer);
+                terminal.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-            save();
         }
     }
 
@@ -138,7 +154,7 @@ public class QuizApp {
         return intInput();
     }
 
-    public static void login() {
+    public static void login(FileWriter terminal) {
         while (true) {
 
             System.out.println("ENTER YOUR USERNAME");
@@ -157,6 +173,12 @@ public class QuizApp {
                     if (i.getPasscode() == passcode) {
                         currentUser = i;
                         System.out.println("Login successful!");
+
+                        try {
+                            terminal.write("Login successful" + username);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         return;
                     } else {
                         System.out.println("Incorrect password.");
@@ -172,7 +194,7 @@ public class QuizApp {
         }
     }
 
-    public static void register() {
+    public static void register(FileWriter terminal) {
         System.out.println("ENTER YOUR USERNAME");
         System.out.print("user>>");
         String username = strInput();
@@ -192,6 +214,12 @@ public class QuizApp {
         users.add(currentUser);
 
         System.out.println("Registration successful!");
+
+        try {
+            terminal.write("Registration successful" + username);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String strInput() {
@@ -327,11 +355,17 @@ public class QuizApp {
 
     // INITIALIZE QUIZ QUESTIONS
 
-    public static void initializeMultipleChoice() {
+    public static void initializeMultipleChoice(FileWriter terminal) throws IOException {
 
         System.out.println("""
                 --- I. MULTIPLE CHOICE (A/B/C, NEXT, BACK)
                 +------------------------------------------------------------------------+
+                """);
+
+        terminal.write("""
+                --- I. MULTIPLE CHOICE (A/B/C, NEXT, BACK)
+                +------------------------------------------------------------------------+
+
                 """);
 
         try {
@@ -442,6 +476,7 @@ public class QuizApp {
             }
 
             System.out.println("MULTIPLE CHOICE SCORE: " + score);
+            terminal.write("MULTIPLE CHOICE SCORE: " + score + "\n");
 
             FR.close();
 
@@ -450,11 +485,17 @@ public class QuizApp {
         }
     }
 
-    public static void initializeIdentification() {
+    public static void initializeIdentification(FileWriter terminal) throws IOException {
 
         System.out.println("""
                 --- II. IDENTIFICATION (Answer / NEXT / BACK)
                 +------------------------------------------------------------------------+
+                """);
+
+        terminal.write("""
+                --- II. IDENTIFICATION (Answer / NEXT / BACK)
+                +------------------------------------------------------------------------+
+                
                 """);
 
         try {
@@ -544,6 +585,7 @@ public class QuizApp {
             }
 
             System.out.println("IDENTIFICATION SCORE: " + score);
+            terminal.write("IDENTIFICATION SCORE: " + score + "\n");
 
             FR.close();
 

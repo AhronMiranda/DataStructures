@@ -1,13 +1,12 @@
-
-
-
-
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class BandRegistration {
 
         //SCANNER
         public static Scanner sc = new Scanner(System.in);
+
 
         //TYPE DESIGN
         public static final String RED = "\033[0;31m";
@@ -27,6 +26,8 @@ public class BandRegistration {
     public BandRegistration(){}
 
     public void runBandRegistration() {
+    
+    
     System.out.println(RED + BOLD + "Register your Band or Favorite Artist" + RESET);
 
     System.out.println(GREEN + "=-=-=-=" + RESET + "\n");
@@ -37,6 +38,10 @@ public class BandRegistration {
     
     while (true) {
         try {
+    FileWriter terminal = new FileWriter("RunProgram.txt", true);
+    terminal.write("Prelim Band or Musical Artist Regiistration Chosen\n");
+
+
     //STRINGS Name and Genre
     System.out.print("Artist Name: ");
     strName = inputString();
@@ -57,7 +62,19 @@ public class BandRegistration {
     iViewers = inputInt();
     
     print(strName, strGenre, iPerfID, dStagePrice, iViewers);
+
+    terminal.write(String.format("---REGISTERED THIS ARTIST OR BAND\nArtist Name: %s\nGenre: %s\nPerformanceID: %d\nStage Price: %.2f\nAverage Viewers: %d\n",
+    strName, strGenre, iPerfID, dStagePrice, iViewers ));
+
+
+    terminal.write("Musical Artist Added to the List [NO DATABASE SAVE]\n");
+    terminal.close();
     break;
+    
+        } catch (IOException e) {
+            // YOU NEED TO RE-REGISTER IF NO FILE IS READ
+            System.out.println(RED + BOLD + "[ERROR] " + e.getMessage() + RESET);
+            System.out.print(BLUE + BOLD + "[TRY AGAIN FROM THE START]" + RESET + "\n");
         } catch (Exception e) {
 
             // YOU NEED TO RE-REGISTER IF YOU HAVE AN INVALID INPUT
@@ -79,6 +96,7 @@ public class BandRegistration {
 
     
     System.out.println(GREEN + count + " Music Artists registered today." + RESET);
+    
 
     }
 

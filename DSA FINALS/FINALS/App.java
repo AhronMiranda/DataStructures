@@ -1,5 +1,5 @@
-
-
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -18,7 +18,27 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         while (run) {
+        try (FileWriter terminal = new FileWriter("RunProgram.txt", true)) {
         System.out.println("""
+            
+                +---------------------------------------+
+                |   Welcome to Ahron's Code Systems     |
+                | ======================================|             
+                |                                       |
+                | Please choose one of the following:   |
+                | 1. EFM Grocery                        |    (1. PRELIMS)
+                | 2. Movie Registration                 |    (2. PRELIMS)
+                | 3. Movie Rental                       |    (3. PRELIMS)
+                | 4. Band Registration                  |    (4. PRELIMS NO FILE SAVING)
+                | 5. Extract Saved Bands                |    (5. MIDTERMS)
+                | 6. Musical Artists Menu               |    (6. MIDTERMS)
+                | 7. Quiz App                           |    (7. FINALS)
+                | 0. Exit                               |
+                +---------------------------------------+
+        
+                """);
+
+        terminal.write("""
             
                 +---------------------------------------+
                 |   Welcome to Ahron's Code Systems     |
@@ -42,11 +62,17 @@ public class App {
             
             try {
                 answer = sc.nextInt();
+                terminal.write("User>> " + answer + "\n");
                 sc.nextLine();
        
             } catch (InputMismatchException e) {
                 System.out.println("Invalid number");
             } 
+
+
+        } catch (IOException e) {
+                System.out.println(RED + "[ERROR FILE NOT FOUND]" + RESET);
+        }
 
         
         switch (answer) {
@@ -80,7 +106,7 @@ public class App {
                 MIDTERMS md = new MIDTERMS();
                 md.runMIDTERMS();
                 break;
-        case 7:
+        case 7 :
                 QuizApp quiz = new QuizApp();
                 break;
         case 0 :
