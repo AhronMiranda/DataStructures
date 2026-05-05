@@ -1,0 +1,35 @@
+
+1  | Stage Name: Sundowner            | Genres: Indie Rock           | PERFORMANCE ID:   2 | Average Price: $ 300.00          | Average Viewers: 200       
+2  | Stage Name: Bruno Mars           | Genres: R&B, Reggae          | PERFORMANCE ID:   3 | Average Price: $ 999999.00       | Average Viewers: 2567987   
+3  | Stage Name: Taylor Swift         | Genres: Several Genres       | PERFORMANCE ID:   4 | Average Price: $ 999999.00       | Average Viewers: 1567987   
+4  | Stage Name: Laufey               | Genres: Yearn                | PERFORMANCE ID:   5 | Average Price: $ 899999.00       | Average Viewers: 2000000   
+5  | Stage Name: Wonder Bag           | Genres: R&B, hip hop         | PERFORMANCE ID:   7 | Average Price: $ 500000.00       | Average Viewers: 1000000   
+6  | Stage Name: Chris Brown          | Genres: R&B                  | PERFORMANCE ID:   8 | Average Price: $ 800000.00       | Average Viewers: 1900000   
+7  | Stage Name: Sabrina Carpenter    | Genres: pop                  | PERFORMANCE ID:   9 | Average Price: $ 900999.00       | Average Viewers: 2000      
+8  | Stage Name: Sunny Stories        | Genres: Opm                  | PERFORMANCE ID:  10 | Average Price: $ 300.00          | Average Viewers: 5000      
+9  | Stage Name: b                    | Genres: b                    | PERFORMANCE ID:  13 | Average Price: $ 13.00           | Average Viewers: 13        
+10 | Stage Name: Prian's Band         | Genres: pop                  | PERFORMANCE ID:  18 | Average Price: $ 9000.00         | Average Viewers: 90        
+1  | Stage Name: Sundowner            | Genres: Indie Rock           | PERFORMANCE ID:   2 | Average Price: $ 300.00          | Average Viewers: 200       
+2  | Stage Name: Bruno Mars           | Genres: R&B, Reggae          | PERFORMANCE ID:   3 | Average Price: $ 999999.00       | Average Viewers: 2567987   
+3  | Stage Name: Taylor Swift         | Genres: Several Genres       | PERFORMANCE ID:   4 | Average Price: $ 999999.00       | Average Viewers: 1567987   
+4  | Stage Name: Laufey               | Genres: Yearn                | PERFORMANCE ID:   5 | Average Price: $ 899999.00       | Average Viewers: 2000000   
+5  | Stage Name: Wonder Bag           | Genres: R&B, hip hop         | PERFORMANCE ID:   7 | Average Price: $ 500000.00       | Average Viewers: 1000000   
+6  | Stage Name: Chris Brown          | Genres: R&B                  | PERFORMANCE ID:   8 | Average Price: $ 800000.00       | Average Viewers: 1900000   
+7  | Stage Name: Sabrina Carpenter    | Genres: pop                  | PERFORMANCE ID:   9 | Average Price: $ 900999.00       | Average Viewers: 2000      
+8  | Stage Name: Sunny Stories        | Genres: Opm                  | PERFORMANCE ID:  10 | Average Price: $ 300.00          | Average Viewers: 5000      
+9  | Stage Name: b                    | Genres: b                    | PERFORMANCE ID:  13 | Average Price: $ 13.00           | Average Viewers: 13        
+10 | Stage Name: Prian's Band         | Genres: pop                  | PERFORMANCE ID:  18 | Average Price: $ 9000.00         | Average Viewers: 90        
+Program Displayed the Updated List this Run
+Program Searched the List
+1  | Stage Name: Sundowner            | Genres: Indie Rock           | PERFORMANCE ID:   2 | Average Price: $ 300.00          | Average Viewers: 200       
+2  | Stage Name: Bruno Mars           | Genres: R&B, Reggae          | PERFORMANCE ID:   3 | Average Price: $ 999999.00       | Average Viewers: 2567987   
+3  | Stage Name: Taylor Swift         | Genres: Several Genres       | PERFORMANCE ID:   4 | Average Price: $ 999999.00       | Average Viewers: 1567987   
+4  | Stage Name: Laufey               | Genres: Yearn                | PERFORMANCE ID:   5 | Average Price: $ 899999.00       | Average Viewers: 2000000   
+5  | Stage Name: Wonder Bag           | Genres: R&B, hip hop         | PERFORMANCE ID:   7 | Average Price: $ 500000.00       | Average Viewers: 1000000   
+6  | Stage Name: Chris Brown          | Genres: R&B                  | PERFORMANCE ID:   8 | Average Price: $ 800000.00       | Average Viewers: 1900000   
+7  | Stage Name: Sabrina Carpenter    | Genres: pop                  | PERFORMANCE ID:   9 | Average Price: $ 900999.00       | Average Viewers: 2000      
+8  | Stage Name: Sunny Stories        | Genres: Opm                  | PERFORMANCE ID:  10 | Average Price: $ 300.00          | Average Viewers: 5000      
+9  | Stage Name: b                    | Genres: b                    | PERFORMANCE ID:  13 | Average Price: $ 13.00           | Average Viewers: 13        
+10 | Stage Name: Prian's Band         | Genres: pop                  | PERFORMANCE ID:  18 | Average Price: $ 9000.00         | Average Viewers: 90        
+Program Displayed the Updated List this Run
+Program Searched the List
