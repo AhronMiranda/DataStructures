@@ -59,15 +59,15 @@ public class App {
             
             
                 System.out.print("User>> ");
+
+        
             
-            try {
-                answer = sc.nextInt();
+            
+                answer = inputInt(sc);
                 terminal.write("User>> " + answer + "\n");
-                sc.nextLine();
-       
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid number");
-            } 
+                
+
+        
 
 
         } catch (IOException e) {
@@ -118,6 +118,22 @@ public class App {
     }
 
     System.out.println(GREEN + "Thank you for availing our services!!!" + RESET);
+    
+    }
+
+    public static int inputInt(Scanner sc) {
+    while (true) {
+    try {
+    int tempInt = sc.nextInt(); sc.nextLine();
+    return tempInt;
+    } catch (InputMismatchException e) {
+    sc.nextLine();
+    System.out.println(RED + "[INVALID INPUT]" + RESET);
+    } catch (IndexOutOfBoundsException e) {
+    sc.nextLine();
+    System.out.println(RED + "[INVALID INPUT OUT OF BOUNDS]" + RESET);
+    }
+        }
     
     }
 }
